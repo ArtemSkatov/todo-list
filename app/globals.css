@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-background text-foreground font-sans;
+}
+
+input,
+textarea,
+select,
+button {
+  @apply outline-none border border-border rounded-md px-3 py-2 bg-card text-foreground placeholder-placeholder;
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  @apply ring-2 ring-blue-400 border-blue-400;
+}
