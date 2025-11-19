@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from "uuid";
 import { Todo } from "../types";
 import { rehydrate } from "./rehydrate";
 
@@ -18,8 +19,8 @@ export const todoListSlice = createSlice({
       const newsState: TodoListState = {
         ...state,
         todos: state.todos.length
-          ? [{ ...action.payload, id: crypto.randomUUID() }, ...state.todos]
-          : [{ ...action.payload, id: crypto.randomUUID() }],
+          ? [{ ...action.payload, id: uuidv4() }, ...state.todos]
+          : [{ ...action.payload, id: uuidv4() }],
       };
 
       return newsState;

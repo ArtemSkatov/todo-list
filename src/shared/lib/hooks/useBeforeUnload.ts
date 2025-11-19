@@ -3,7 +3,6 @@ import { useEffect } from "react";
 export function useBeforeUnload(callback: () => void) {
   useEffect(() => {
     const handler = () => {
-      console.log("useBeforeUnload");
       callback();
     };
 
