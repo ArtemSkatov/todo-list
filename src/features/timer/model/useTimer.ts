@@ -25,7 +25,7 @@ export const useTimer = (todoId: string, timeStart: number, status: Status) => {
   const handlePauseTime = () =>
     dispatch(pauseTime({ id: todoId, lastTime: time }));
 
-  useBeforeUnload(handlePauseTime);
+  useBeforeUnload(status === "inProgress" ? handlePauseTime : () => {});
 
   return { time, handleStartTime, handlePauseTime };
 };
